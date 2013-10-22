@@ -1,0 +1,66 @@
+#N canvas 115 291 1126 388 10;
+#X obj 134 135 tgl 8 0 empty empty empty 17 7 0 10 -260097 -1 -1 0
+1;
+#X obj 124 125 tgl 8 0 empty empty empty 17 7 0 10 -258113 -1 -1 0
+1;
+#X obj 124 115 tgl 8 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 124 135 tgl 8 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 114 125 tgl 8 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 134 125 tgl 8 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 144 115 tgl 8 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 164 115 tgl 8 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 154 115 tgl 8 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 154 124 tgl 8 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 154 134 tgl 8 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 164 124 tgl 8 0 empty empty empty 17 7 0 10 -4034 -1 -1 0 1
+;
+#X obj 164 134 tgl 8 0 empty empty empty 17 7 0 10 -4032 -1 -1 0 1
+;
+#X obj 90 31 r \$1-b2;
+#X obj 155 31 r \$1-up2;
+#X obj 230 31 r \$1-down2;
+#X obj 314 31 r \$1-left2;
+#X obj 400 31 r \$1-right2;
+#X obj 495 31 r \$1-minus2;
+#X obj 599 31 r \$1-plus2;
+#X obj 693 31 r \$1-home2;
+#X obj 787 31 r \$1-one2;
+#X obj 871 31 r \$1-two2;
+#X obj 219 301 r \$1-c2;
+#X obj 274 301 r \$1-z2;
+#X obj 586 170 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 586 192 f \$1;
+#X floatatom 586 214 5 0 0 0 - - -;
+#X obj 626 170 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 626 214 5 0 0 0 - - -;
+#X obj 626 192 f \$2;
+#X obj 25 31 r \$1-a2;
+#X connect 13 0 1 0;
+#X connect 14 0 2 0;
+#X connect 15 0 3 0;
+#X connect 16 0 4 0;
+#X connect 17 0 5 0;
+#X connect 18 0 6 0;
+#X connect 19 0 7 0;
+#X connect 20 0 8 0;
+#X connect 21 0 9 0;
+#X connect 22 0 10 0;
+#X connect 23 0 11 0;
+#X connect 24 0 12 0;
+#X connect 25 0 26 0;
+#X connect 26 0 27 0;
+#X connect 28 0 30 0;
+#X connect 30 0 29 0;
+#X connect 31 0 0 0;
+#X coords 0 -1 1 1 85 45 1 100 100;

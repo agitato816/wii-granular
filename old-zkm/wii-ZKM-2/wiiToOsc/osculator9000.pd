@@ -1,0 +1,467 @@
+#N canvas 707 22 983 344 10;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X obj 54 9 import mrpeach;
+#X obj 25 111 unpackOSC;
+#N canvas 532 22 468 641 nunchuk_1 0;
+#X obj 32 57 routeOSC /accel /button /joy;
+#X obj 32 239 routeOSC /pry /xyz;
+#X floatatom 32 293 5 0 0 3 Npitch - -;
+#X floatatom 91 293 5 0 0 3 Nroll - -;
+#X floatatom 150 293 5 0 0 3 Nyaw - -;
+#X floatatom 209 293 5 0 0 3 Naccel - -;
+#X floatatom 262 293 5 0 0 3 Nx - -;
+#X floatatom 332 293 5 0 0 3 Ny - -;
+#X floatatom 403 293 5 0 0 3 Nz - -;
+#X obj 32 271 unpack float float float float;
+#X obj 262 271 unpack float float float;
+#X obj 87 199 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 127 199 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 87 164 routeOSC /C /Z;
+#X floatatom 142 108 5 0 0 3 NJx - -;
+#X floatatom 199 108 5 0 0 3 NJy - -;
+#X obj 142 86 unpack f f;
+#X obj 32 20 inlet nunchuk;
+#X obj 32 359 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 5242 1;
+#X obj 65 448 hsl 128 15 0 1 0 0 empty empty 0-1 -2 -8 0 10 -262144
+-1 -1 396 1;
+#X obj 209 359 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 2477 1;
+#X obj 65 368 hsl 128 15 0 1 0 0 empty empty 0-1 -2 -8 0 10 -262144
+-1 -1 1358 1;
+#X obj 262 359 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 5186 1;
+#X obj 332 359 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 6464 1;
+#X obj 403 359 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 6756 1;
+#X obj 62 540 outlet /accel;
+#X obj 162 540 outlet /button;
+#X obj 272 540 outlet /joy;
+#X connect 0 0 1 0;
+#X connect 0 0 25 0;
+#X connect 0 1 13 0;
+#X connect 0 1 26 0;
+#X connect 0 2 16 0;
+#X connect 0 2 27 0;
+#X connect 1 0 9 0;
+#X connect 1 1 10 0;
+#X connect 2 0 18 0;
+#X connect 3 0 21 0;
+#X connect 4 0 19 0;
+#X connect 5 0 20 0;
+#X connect 6 0 22 0;
+#X connect 7 0 23 0;
+#X connect 8 0 24 0;
+#X connect 9 0 2 0;
+#X connect 9 1 3 0;
+#X connect 9 2 4 0;
+#X connect 9 3 5 0;
+#X connect 10 0 6 0;
+#X connect 10 1 7 0;
+#X connect 10 2 8 0;
+#X connect 13 0 11 0;
+#X connect 13 1 12 0;
+#X connect 16 0 14 0;
+#X connect 16 1 15 0;
+#X connect 17 0 0 0;
+#X restore 305 231 pd nunchuk_1;
+#N canvas 47 25 498 469 motion_1 0;
+#X obj 49 93 routeOSC /angles /velo;
+#X floatatom 49 163 5 0 0 3 Mpitch - -;
+#X floatatom 119 163 5 0 0 3 Mroll - -;
+#X floatatom 190 163 5 0 0 3 Myaw - -;
+#X obj 49 141 unpack float float float;
+#X floatatom 239 163 5 0 0 3 MpitchV - -;
+#X floatatom 309 163 5 0 0 3 MrollV - -;
+#X floatatom 380 163 5 0 0 3 MyawV - -;
+#X obj 239 141 unpack float float float;
+#X obj 49 36 inlet motion;
+#X obj 92 248 hsl 128 15 0 1 0 0 empty empty 0-1 -2 -8 0 10 -262144
+-1 -1 6302 1;
+#X obj 49 239 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 6399 1;
+#X obj 92 328 hsl 128 15 0 1 0 0 empty empty 0-1 -2 -8 0 10 -262144
+-1 -1 10925 1;
+#X obj 292 268 hsl 128 15 -1 1 0 0 empty empty -1+1 -2 -8 0 10 -262144
+-1 -1 6349 1;
+#X obj 332 318 hsl 128 15 -1 1 0 0 empty empty -1+1 -2 -8 0 10 -262144
+-1 -1 6333 1;
+#X obj 239 239 vsl 15 128 -1 1 0 0 empty empty -1+1 0 -9 0 10 -262144
+-1 -1 6353 1;
+#X obj 69 415 outlet /angles;
+#X obj 179 415 outlet /velo;
+#X connect 0 0 4 0;
+#X connect 0 0 16 0;
+#X connect 0 1 8 0;
+#X connect 0 1 17 0;
+#X connect 1 0 11 0;
+#X connect 2 0 10 0;
+#X connect 3 0 12 0;
+#X connect 4 0 1 0;
+#X connect 4 1 2 0;
+#X connect 4 2 3 0;
+#X connect 5 0 15 0;
+#X connect 6 0 13 0;
+#X connect 7 0 14 0;
+#X connect 8 0 5 0;
+#X connect 8 1 6 0;
+#X connect 8 2 7 0;
+#X connect 9 0 0 0;
+#X restore 145 231 pd motion_1;
+#X obj 25 133 routeOSC /wii/1;
+#X msg 145 62 port 9001;
+#X obj 145 89 udpreceive 9001;
+#X obj 145 133 routeOSC /wii/1/motion;
+#X obj 145 111 unpackOSC;
+#X obj 305 111 unpackOSC;
+#X msg 25 62 port 9000;
+#X msg 305 62 port 9002;
+#X obj 305 89 udpreceive 9002;
+#X obj 305 133 routeOSC /wii/1/nunchuk;
+#X obj 545 111 unpackOSC;
+#X obj 665 111 unpackOSC;
+#X obj 825 111 unpackOSC;
+#X msg 545 63 port 9003;
+#X obj 545 89 udpreceive 9003;
+#N canvas 997 235 516 626 wii_2 0;
+#X obj 25 209 routeOSC /pry /xyz;
+#X floatatom 25 303 5 0 0 3 pitch - -;
+#X floatatom 84 303 5 0 0 3 roll - -;
+#X floatatom 143 303 5 0 0 3 yaw - -;
+#X floatatom 202 303 5 0 0 3 accel - -;
+#X floatatom 255 303 5 0 0 3 x - -;
+#X floatatom 325 303 5 0 0 3 y - -;
+#X floatatom 396 303 5 0 0 3 z - -;
+#X obj 92 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 121 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 151 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 181 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 210 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 240 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 270 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 300 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 329 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 359 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 389 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 25 281 unpack float float float float;
+#X obj 255 281 unpack float float float;
+#X obj 92 114 routeOSC /A /B /Minus /Home /Plus /1 /2 /Up /Down /Left
+/Right;
+#X obj 25 67 routeOSC /accel /button;
+#X obj 58 398 hsl 128 15 0 1 0 0 empty empty 0-1 -2 -8 0 10 -262144
+-1 -1 2615 1;
+#X obj 25 389 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 5739 1;
+#X obj 58 478 hsl 128 15 0 1 0 0 empty empty 0-1 -2 -8 0 10 -262144
+-1 -1 462 1;
+#X obj 202 389 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 2631 1;
+#X obj 255 389 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 5305 1;
+#X obj 325 389 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 6470 1;
+#X obj 395 389 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 7140 1;
+#X obj 25 7 inlet /wii/deviceId(number);
+#X obj 215 561 outlet /button;
+#X obj 115 561 outlet /accel;
+#X connect 0 0 19 0;
+#X connect 0 1 20 0;
+#X connect 1 0 24 0;
+#X connect 2 0 23 0;
+#X connect 3 0 25 0;
+#X connect 4 0 26 0;
+#X connect 5 0 27 0;
+#X connect 6 0 28 0;
+#X connect 7 0 29 0;
+#X connect 19 0 1 0;
+#X connect 19 1 2 0;
+#X connect 19 2 3 0;
+#X connect 19 3 4 0;
+#X connect 20 0 5 0;
+#X connect 20 1 6 0;
+#X connect 20 2 7 0;
+#X connect 21 0 8 0;
+#X connect 21 1 9 0;
+#X connect 21 2 10 0;
+#X connect 21 3 11 0;
+#X connect 21 4 12 0;
+#X connect 21 5 13 0;
+#X connect 21 6 14 0;
+#X connect 21 7 15 0;
+#X connect 21 8 16 0;
+#X connect 21 9 17 0;
+#X connect 21 10 18 0;
+#X connect 22 0 0 0;
+#X connect 22 0 32 0;
+#X connect 22 1 21 0;
+#X connect 22 1 31 0;
+#X connect 30 0 22 0;
+#X restore 545 231 pd wii_2;
+#N canvas 103 22 487 401 motion_2 0;
+#X obj 49 93 routeOSC /angles /velo;
+#X floatatom 49 163 5 0 0 3 Mpitch - -;
+#X floatatom 119 163 5 0 0 3 Mroll - -;
+#X floatatom 190 163 5 0 0 3 Myaw - -;
+#X obj 49 141 unpack float float float;
+#X floatatom 239 163 5 0 0 3 MpitchV - -;
+#X floatatom 309 163 5 0 0 3 MrollV - -;
+#X floatatom 380 163 5 0 0 3 MyawV - -;
+#X obj 239 141 unpack float float float;
+#X obj 49 36 inlet motion;
+#X obj 92 248 hsl 128 15 0 1 0 0 empty empty 0-1 -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 49 239 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 92 328 hsl 128 15 0 1 0 0 empty empty 0-1 -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 292 268 hsl 128 15 -1 1 0 0 empty empty -1+1 -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 332 318 hsl 128 15 -1 1 0 0 empty empty -1+1 -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 239 239 vsl 15 128 -1 1 0 0 empty empty -1+1 0 -9 0 10 -262144
+-1 -1 0 1;
+#X connect 0 0 4 0;
+#X connect 0 1 8 0;
+#X connect 1 0 11 0;
+#X connect 2 0 10 0;
+#X connect 3 0 12 0;
+#X connect 4 0 1 0;
+#X connect 4 1 2 0;
+#X connect 4 2 3 0;
+#X connect 5 0 15 0;
+#X connect 6 0 13 0;
+#X connect 7 0 14 0;
+#X connect 8 0 5 0;
+#X connect 8 1 6 0;
+#X connect 8 2 7 0;
+#X connect 9 0 0 0;
+#X restore 665 231 pd motion_2;
+#N canvas 1012 22 467 471 nunchuk_2 0;
+#X obj 32 57 routeOSC /accel /button /joy;
+#X obj 32 199 routeOSC /pry /xyz;
+#X floatatom 32 253 5 0 0 3 Npitch - -;
+#X floatatom 91 253 5 0 0 3 Nroll - -;
+#X floatatom 150 253 5 0 0 3 Nyaw - -;
+#X floatatom 209 253 5 0 0 3 Naccel - -;
+#X floatatom 262 253 5 0 0 3 Nx - -;
+#X floatatom 332 253 5 0 0 3 Ny - -;
+#X floatatom 403 253 5 0 0 3 Nz - -;
+#X obj 32 231 unpack float float float float;
+#X obj 262 231 unpack float float float;
+#X obj 87 179 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 127 179 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 87 144 routeOSC /C /Z;
+#X floatatom 142 108 5 0 0 3 NJx - -;
+#X floatatom 199 108 5 0 0 3 NJy - -;
+#X obj 142 86 unpack f f;
+#X obj 32 20 inlet nunchuk;
+#X obj 32 319 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 6350 1;
+#X obj 65 408 hsl 128 15 0 1 0 0 empty empty 0-1 -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 209 319 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 3033 1;
+#X obj 65 328 hsl 128 15 0 1 0 0 empty empty 0-1 -2 -8 0 10 -262144
+-1 -1 908 1;
+#X obj 262 319 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 4872 1;
+#X obj 332 319 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 6350 1;
+#X obj 403 319 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 6688 1;
+#X connect 0 0 1 0;
+#X connect 0 1 13 0;
+#X connect 0 2 16 0;
+#X connect 1 0 9 0;
+#X connect 1 1 10 0;
+#X connect 2 0 18 0;
+#X connect 3 0 21 0;
+#X connect 4 0 19 0;
+#X connect 5 0 20 0;
+#X connect 6 0 22 0;
+#X connect 7 0 23 0;
+#X connect 8 0 24 0;
+#X connect 9 0 2 0;
+#X connect 9 1 3 0;
+#X connect 9 2 4 0;
+#X connect 9 3 5 0;
+#X connect 10 0 6 0;
+#X connect 10 1 7 0;
+#X connect 10 2 8 0;
+#X connect 13 0 11 0;
+#X connect 13 1 12 0;
+#X connect 16 0 14 0;
+#X connect 16 1 15 0;
+#X connect 17 0 0 0;
+#X restore 825 231 pd nunchuk_2;
+#X obj 545 133 routeOSC /wii/2;
+#X obj 665 133 routeOSC /wii/2/motion;
+#X obj 825 133 routeOSC /wii/2/nunchuk;
+#X msg 665 63 port 9004;
+#X msg 825 63 port 9005;
+#X obj 665 89 udpreceive 9004;
+#X obj 825 89 udpreceive 9005;
+#X obj 25 90 udpreceive 9000;
+#X obj 45 165 j-bt;
+#X obj 165 165 j-bt;
+#X obj 325 165 j-bt;
+#X obj 565 165 j-bt;
+#X obj 685 165 j-bt;
+#X obj 845 165 j-bt;
+#X obj 25 16 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 25 36 t b b b;
+#X obj 545 16 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 545 36 t b b b;
+#X obj 25 283 outlet 1/accel;
+#X obj 118 283 outlet 1/button;
+#X obj 545 283 outlet 1/accel;
+#X obj 638 283 outlet 1/button;
+#N canvas 988 438 671 569 wii_1 0;
+#X obj 25 209 routeOSC /pry /xyz;
+#X floatatom 45 303 5 0 0 3 pitch - -;
+#X floatatom 104 303 5 0 0 3 roll - -;
+#X floatatom 163 303 5 0 0 3 yaw - -;
+#X floatatom 222 303 5 0 0 3 accel - -;
+#X floatatom 385 303 5 0 0 3 x - -;
+#X floatatom 455 303 5 0 0 3 y - -;
+#X floatatom 526 303 5 0 0 3 z - -;
+#X obj 92 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 121 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 151 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 181 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 210 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 240 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 270 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 300 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 329 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 359 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 389 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 25 281 unpack float float float float;
+#X obj 365 281 unpack float float float;
+#X obj 92 114 routeOSC /A /B /Minus /Home /Plus /1 /2 /Up /Down /Left
+/Right;
+#X obj 25 67 routeOSC /accel /button;
+#X obj 78 358 hsl 128 15 0 1 0 0 empty empty 0-1 -2 -8 0 10 -262144
+-1 -1 6287 1;
+#X obj 45 350 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 6423 1;
+#X obj 78 438 hsl 128 15 0 1 0 0 empty empty 0-1 -2 -8 0 10 -262144
+-1 -1 829 1;
+#X obj 222 349 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 2625 1;
+#X obj 385 349 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 6329 1;
+#X obj 455 349 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 6326 1;
+#X obj 526 349 vsl 15 128 0 1 0 0 empty empty 0-1 0 -9 0 10 -262144
+-1 -1 7662 1;
+#X obj 25 7 inlet /wii/deviceId(number);
+#X obj 205 511 outlet /button;
+#X obj 105 511 outlet /accel;
+#X connect 0 0 19 0;
+#X connect 0 1 20 0;
+#X connect 1 0 24 0;
+#X connect 2 0 23 0;
+#X connect 3 0 25 0;
+#X connect 4 0 26 0;
+#X connect 5 0 27 0;
+#X connect 6 0 28 0;
+#X connect 7 0 29 0;
+#X connect 19 0 1 0;
+#X connect 19 1 2 0;
+#X connect 19 2 3 0;
+#X connect 19 3 4 0;
+#X connect 20 0 5 0;
+#X connect 20 1 6 0;
+#X connect 20 2 7 0;
+#X connect 21 0 8 0;
+#X connect 21 1 9 0;
+#X connect 21 2 10 0;
+#X connect 21 3 11 0;
+#X connect 21 4 12 0;
+#X connect 21 5 13 0;
+#X connect 21 6 14 0;
+#X connect 21 7 15 0;
+#X connect 21 8 16 0;
+#X connect 21 9 17 0;
+#X connect 21 10 18 0;
+#X connect 22 0 0 0;
+#X connect 22 0 32 0;
+#X connect 22 1 21 0;
+#X connect 22 1 31 0;
+#X connect 30 0 22 0;
+#X restore 25 231 pd wii_1;
+#X obj 575 9 import mrpeach;
+#X connect 1 0 4 0;
+#X connect 4 0 44 0;
+#X connect 4 0 30 0;
+#X connect 5 0 6 0;
+#X connect 6 0 8 0;
+#X connect 7 0 3 0;
+#X connect 7 0 31 0;
+#X connect 8 0 7 0;
+#X connect 9 0 13 0;
+#X connect 10 0 29 0;
+#X connect 11 0 12 0;
+#X connect 12 0 9 0;
+#X connect 13 0 2 0;
+#X connect 13 0 32 0;
+#X connect 14 0 22 0;
+#X connect 15 0 23 0;
+#X connect 16 0 24 0;
+#X connect 17 0 18 0;
+#X connect 18 0 14 0;
+#X connect 19 0 42 0;
+#X connect 19 1 43 0;
+#X connect 22 0 19 0;
+#X connect 22 0 33 0;
+#X connect 23 0 20 0;
+#X connect 23 0 34 0;
+#X connect 24 0 21 0;
+#X connect 24 0 35 0;
+#X connect 25 0 27 0;
+#X connect 26 0 28 0;
+#X connect 27 0 15 0;
+#X connect 28 0 16 0;
+#X connect 29 0 1 0;
+#X connect 36 0 37 0;
+#X connect 37 0 10 0;
+#X connect 37 1 5 0;
+#X connect 37 2 11 0;
+#X connect 38 0 39 0;
+#X connect 39 0 17 0;
+#X connect 39 1 25 0;
+#X connect 39 2 26 0;
+#X connect 44 0 40 0;
+#X connect 44 1 41 0;

@@ -1,0 +1,12 @@
+#N canvas 500 516 233 239 10;
+#X obj 46 87 int;
+#X obj 46 44 inlet moving_float;
+#X obj 46 178 outlet adjusted_float;
+#X obj 46 65 * 1000;
+#X obj 46 109 / 1000;
+#X obj 46 144 mavg \$1;
+#X connect 0 0 4 0;
+#X connect 1 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;

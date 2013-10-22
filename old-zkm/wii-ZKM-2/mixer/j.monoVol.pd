@@ -1,0 +1,13 @@
+#N canvas 273 170 400 398 10;
+#X obj 247 199 line~;
+#X msg 247 175 \$1 50;
+#X obj 63 301 *~;
+#X obj 63 29 inlet~ mono;
+#X obj 247 64 r \$1;
+#X text 284 63 symbol;
+#X obj 63 323 outlet~ mono;
+#X connect 0 0 2 1;
+#X connect 1 0 0 0;
+#X connect 2 0 6 0;
+#X connect 3 0 2 0;
+#X connect 4 0 1 0;

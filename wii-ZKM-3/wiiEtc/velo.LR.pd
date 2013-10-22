@@ -1,0 +1,37 @@
+#N canvas 918 563 450 300 10;
+#X obj 182 123 t f f;
+#X obj 182 167 change;
+#X obj 182 219 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 242 167 change;
+#X obj 242 219 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 182 38 inlet gyro_velocity;
+#X obj 182 249 outlet up;
+#X obj 242 249 outlet down;
+#X obj 102 116 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 122 116 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 182 145 < \$1;
+#X obj 242 145 > \$2;
+#X obj 182 60 route reset;
+#X msg 329 116 0;
+#X obj 329 138 t f f;
+#X connect 0 0 10 0;
+#X connect 0 1 11 0;
+#X connect 1 0 2 0;
+#X connect 2 0 6 0;
+#X connect 2 0 8 0;
+#X connect 3 0 4 0;
+#X connect 4 0 7 0;
+#X connect 4 0 9 0;
+#X connect 5 0 12 0;
+#X connect 10 0 1 0;
+#X connect 11 0 3 0;
+#X connect 12 0 13 0;
+#X connect 12 1 0 0;
+#X connect 13 0 14 0;
+#X connect 14 0 2 0;
+#X connect 14 1 4 0;
+#X coords 0 -1 1 1 39 33 1 100 100;

@@ -1,0 +1,35 @@
+#N canvas 773 374 754 427 10;
+#X text 143 109 set range;
+#X obj 308 311 f;
+#X obj 145 156 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 255 270 5 0 0 0 - - -;
+#X obj 145 137 loadbang;
+#X obj 308 181 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 255 238 f \$2;
+#X obj 72 239 symbol \$1;
+#X obj 228 353 send;
+#X symbolatom 72 271 10 0 0 0 - - -;
+#X obj 145 176 t b b;
+#X obj 72 374 outlet symbol;
+#X obj 308 373 outlet samples;
+#X obj 488 17 inlet setRange;
+#X floatatom 488 129 11 0 0 0 - - -;
+#X obj 308 17 inlet bng;
+#X connect 1 0 8 0;
+#X connect 1 0 12 0;
+#X connect 2 0 10 0;
+#X connect 3 0 1 1;
+#X connect 4 0 2 0;
+#X connect 5 0 1 0;
+#X connect 5 0 7 0;
+#X connect 6 0 3 0;
+#X connect 7 0 8 1;
+#X connect 7 0 9 0;
+#X connect 9 0 11 0;
+#X connect 10 0 6 0;
+#X connect 10 1 7 0;
+#X connect 13 0 14 0;
+#X connect 14 0 6 1;
+#X connect 15 0 5 0;

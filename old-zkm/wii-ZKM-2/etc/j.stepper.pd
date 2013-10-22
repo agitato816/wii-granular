@@ -1,0 +1,36 @@
+#N canvas 335 238 388 557 10;
+#X obj 153 170 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 202 169 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 56 431 5 0 0 0 - - -;
+#X msg 54 156 \$1;
+#X obj 54 40 inlet;
+#X obj 183 318 - 1;
+#X obj 232 317 + 1;
+#X obj 172 242 int;
+#X obj 123 243 int;
+#X obj 56 472 outlet intNumber;
+#X obj 54 62 route down up reset;
+#X msg 194 99 0;
+#X obj 92 382 clip 0 \$1;
+#X text 182 380 how many programs?;
+#X connect 0 0 8 0;
+#X connect 1 0 7 0;
+#X connect 2 0 9 0;
+#X connect 3 0 2 0;
+#X connect 3 0 7 1;
+#X connect 3 0 8 1;
+#X connect 4 0 10 0;
+#X connect 5 0 12 0;
+#X connect 6 0 12 0;
+#X connect 7 0 6 0;
+#X connect 8 0 5 0;
+#X connect 10 0 0 0;
+#X connect 10 1 1 0;
+#X connect 10 2 11 0;
+#X connect 10 3 3 0;
+#X connect 11 0 3 0;
+#X connect 12 0 2 0;
+#X connect 12 0 7 1;
+#X connect 12 0 8 1;
